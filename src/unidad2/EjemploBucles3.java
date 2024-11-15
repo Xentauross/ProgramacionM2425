@@ -18,15 +18,19 @@ public class EjemploBucles3 {
 		// int numIntentos=5;
 
 		Scanner teclado = new Scanner(System.in);
-
+		boolean encontrado = false;
 		// Repetimos el numero de intentos
-		for (int numIntentos = 5; numIntentos > 0; numIntentos--) {
+		for (int numIntentos = 5; numIntentos > 0 && !encontrado; numIntentos--) {
 			System.out.print("intento numero " + numIntentos + ":");
 			num = teclado.nextInt();
 
 			if (num == numGenerado) {
 				System.out.println("Felicidades, has acertado");
-				numIntentos = 0;
+				// break;
+				// Otra opcion de parada de bucle sería poner un booleano qu indique el final
+				encontrado = true;
+				// Tambien eleminando los intentos se acabaría
+				// numIntentos = 0;
 			} else {
 				/*
 				 * Para ver si esta cerca, haemos el valor absoluto (pasa a positivo si es
