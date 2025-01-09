@@ -34,6 +34,18 @@ public class Personaje {
 		this.puntosPoder = (int) (Math.random() * 20);
 	}
 
+	/**
+	 * Esta funcion ejecuta una tirada de ataque que se calcula con un dado de 20
+	 * mas la fuerza
+	 * 
+	 * @return
+	 */
+
+	public int tiradaAtaque() {
+		// Ejecutamos la tirada de ataque
+		return this.fuerza + (int) (Math.random() * 21);
+	}
+
 	// Funciones
 
 	// Las fuciones al decclarse deben de fenir si son publicas/privadas/protegidas

@@ -12,6 +12,16 @@ public class EjemploUsoObjeto {
 		 * objetos puesden utilizar Un objeto es como una variable de esa clase que
 		 * puede guardar datos y ejecutar las funciones
 		 */
+		// Creamos un arma
+		// Para poder usar un objeto primero hay que crearlo
+		// Se utiliza la prabra reservada new para indicar qeu lo creamos
+		// Cuando lo creamos realmente se llama a una fucnion de la clase arma
+		// que se denomina constructor
+		Arma arcoGelido = new Arma();
+
+		// arcoGelido.nombre = "Frozen";
+
+		String nombre;
 
 		// Creamos un personaje con new y el nombre de la clase
 		Personaje aragorn = new Personaje();
@@ -23,6 +33,17 @@ public class EjemploUsoObjeto {
 		System.out.println("El personaje tiene " + aragorn.puntosVida + " puntos de vida");
 		aragorn.recibirDanio(0);
 		System.out.println("El personaje tiene " + aragorn.puntosVida + " puntos de vida");
+
+		System.out.println("Tirada de ataque de aragorn: " + aragorn.tiradaAtaque());
+
+		System.out.println("Descripcion del arma: " + arcoGelido.getDescripcion());
+
+		arcoGelido.setDescripcion("Congela los higadillos");
+
+		System.out.println("Descripcion del arma: " + arcoGelido.getDescripcion());
+
+		System.out.println("Datos del arma " + arcoGelido);
+
 	}
 
 }
