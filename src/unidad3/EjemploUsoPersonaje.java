@@ -1,6 +1,6 @@
 package unidad3;
 
-public class EjemploUsoObjeto {
+public class EjemploUsoPersonaje {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -18,6 +18,8 @@ public class EjemploUsoObjeto {
 		// Cuando lo creamos realmente se llama a una fucnion de la clase arma
 		// que se denomina constructor
 		Arma arcoGelido = new Arma();
+		
+		Arma lanzaPicas = new Arma("Lanza Picas", "multiples a la vez", 0, 20, 0, 3);
 
 		// arcoGelido.nombre = "Frozen";
 

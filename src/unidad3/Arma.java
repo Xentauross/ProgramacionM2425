@@ -20,8 +20,6 @@ public class Arma {
 
 	/***************************************************************
 	 * CONTRUCTORES DE LA CLASE
-	 * 
-	 * @return
 	 ****************************************************************/
 
 	public Arma() {
@@ -32,10 +30,31 @@ public class Arma {
 		this.descripcion = "Arma por defecto, no hace pupa";
 	}
 
+	/**
+	 * Contructor que recive todos los datos del objeto y los asigna a las variables
+	 * miembro
+	 * 
+	 * @param nombre
+	 * @param descripcion
+	 * @param efecto(0-    nada, 1- veneno,2-quemadura,3-estreñimiento,
+	 *                     4-congelación)
+	 * @param ataqueFisico
+	 * @param ataqueMagico
+	 * @param peso
+	 */
+
+	public Arma(String nombre, String descripcion, int efecto, int ataqueFisico, int ataqueMagico, double peso) {
+		super();
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.efecto = efecto;
+		this.ataqueFisico = ataqueFisico;
+		this.ataqueMagico = ataqueMagico;
+		this.peso = peso;
+	}
+
 	/**************************************************************
 	 * GETTERS Y SETTERS DE LA CLASE
-	 * 
-	 * @return
 	 *************************************************************/
 	public String getNombre() {
 		return this.nombre;
@@ -55,6 +74,10 @@ public class Arma {
 
 	public void setataqueFisico(int ataqueFisico) {
 		this.ataqueFisico = ataqueFisico;
+	}
+
+	public void setataqueMagico(int ataqueMagico) {
+		this.ataqueMagico = ataqueMagico;
 	}
 
 	public int getEfecto() {
