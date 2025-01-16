@@ -18,23 +18,30 @@ public class EjemploUsoPersonaje {
 		// Cuando lo creamos realmente se llama a una fucnion de la clase arma
 		// que se denomina constructor
 		Arma arcoGelido = new Arma();
-		
+
 		Arma lanzaPicas = new Arma("Lanza Picas", "multiples a la vez", 0, 20, 0, 3);
 
 		// arcoGelido.nombre = "Frozen";
 
-		String nombre;
+		String nombre = "pepe";
 
 		// Creamos un personaje con new y el nombre de la clase
 		Personaje aragorn = new Personaje();
+
+		// añadimos armas a aragorn
+		aragorn.addArma(arcoGelido);
+		aragorn.addArma(lanzaPicas);
+
 		// Para acceder a las variables mienbre de la clase se utiliza el .
-		aragorn.fuerza = 13;
+		aragorn.setFuerza(13);
 
-		System.out.println("El personaje tiene " + aragorn.inteligencia + " puntos de inteligencia");
+		System.out.println("El personaje tiene " + aragorn.getInteligencia() + " puntos de inteligencia");
 
-		System.out.println("El personaje tiene " + aragorn.puntosVida + " puntos de vida");
+		System.out.println("El personaje tiene " + aragorn.armaPrincipal());
+
+		System.out.println("El personaje tiene " + aragorn.getpuntosVida + " puntos de vida");
 		aragorn.recibirDanio(0);
-		System.out.println("El personaje tiene " + aragorn.puntosVida + " puntos de vida");
+		System.out.println("El personaje tiene " + aragorn.getpuntosVida + " puntos de vida");
 
 		System.out.println("Tirada de ataque de aragorn: " + aragorn.tiradaAtaque());
 

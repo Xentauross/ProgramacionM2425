@@ -1,5 +1,7 @@
 package unidad3;
 
+import java.util.ArrayList;
+
 public class Personaje {
 
 	// Variables miembro de la clase
@@ -11,13 +13,24 @@ public class Personaje {
 	 * public publicas private privada protected protegidas, solo las clases hijas
 	 * pueden usarlas
 	 */
-	public int fuerza;
-	public int inteligencia;
-	public int carisma;
-
+	private int fuerza;
+	private int inteligencia;
+	private int carisma;
+	public int clase;
 	// Si las ponemos privadas no serán accesibles directamente desde el objeto
-	public int puntosVida;
+	private int puntosVida;
 	private int puntosPoder;
+
+	// int listaNumeros[] = new int[10];
+
+	// Para definir un arraylist hay que decir el tipo de objeto que va a almacenar
+	// entre <>
+	// Al contrario que con un array normal, no hace falta definir el tamaño, segun
+	// añadimos elementos al arraylist va haciendos mas grande
+	private ArrayList<Arma> armas = new ArrayList<Arma>();
+	public String getpuntosVida;
+
+	// ArrayList<Integer> listaNumeros = new ArrayList<Integer>();
 
 	/*
 	 * Constructor principal
@@ -54,6 +67,88 @@ public class Personaje {
 
 	public void recibirDanio(int danio) {
 		this.puntosVida = this.puntosVida - danio;
+	}
+
+	public int getFuerza() {
+		return fuerza;
+	}
+
+	public void setFuerza(int fuerza) {
+		this.fuerza = fuerza;
+	}
+
+	public int getInteligencia() {
+		return inteligencia;
+	}
+
+	public void setInteligencia(int inteligencia) {
+		this.inteligencia = inteligencia;
+	}
+
+	public int getCarisma() {
+		return carisma;
+	}
+
+	public void setCarisma(int carisma) {
+		this.carisma = carisma;
+	}
+
+	public int getClase() {
+		return clase;
+	}
+
+	public void setClase(int clase) {
+		this.clase = clase;
+	}
+
+	public int getPuntosVida() {
+		return puntosVida;
+	}
+
+	public void setPuntosVida(int puntosVida) {
+		this.puntosVida = puntosVida;
+	}
+
+	public int getPuntosPoder() {
+		return puntosPoder;
+	}
+
+	public void setPuntosPoder(int puntosPoder) {
+		this.puntosPoder = puntosPoder;
+	}
+
+	public ArrayList<Arma> getArmas() {
+		return armas;
+	}
+
+	public void setArmas(ArrayList<Arma> armas) {
+		this.armas = armas;
+	}
+
+	/**
+	 * Recibe un arma y la añade a la lista de armas del personaje
+	 * 
+	 * @param armaRecibida objeto de tipo arma que añade al personaje
+	 */
+	public void addArma(Arma armaRecibida) {
+		// Añadimos con add el arma recibida
+		// En la ultima posicion del arraylist de armas
+		this.armas.add(2, armaRecibida);
+	}
+
+	/**
+	 * La funcion devuelve la primera arma de la lista de armas que se suppone la
+	 * principal Si la lista de armas está vacia devuelve null
+	 * 
+	 * @return Devuelve el arma principal del personaje o null si no tiene armas
+	 */
+	public Arma armaPrincipal() {
+		// Solo cogemos el arma de la posicion 0 si en la lista de armas
+		// hay al menos 1 arma
+		if (armas.size() >= 1)
+			return this.armas.get(0);
+
+		return null;
 	}
 
 }

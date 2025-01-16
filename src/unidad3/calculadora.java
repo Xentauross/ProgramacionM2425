@@ -1,5 +1,7 @@
 package unidad3;
 
+import java.util.Arrays;
+
 public class calculadora {
 
 	/**
@@ -13,6 +15,87 @@ public class calculadora {
 	public static int suma(int a, int b) {
 		int resultado = a + b;
 		return resultado;
+	}
+
+	/**
+	 * Recibe un array y devuelve la suma
+	 * 
+	 * @param listaNumeros lista de numeros en double
+	 * @return
+	 */
+	public static double suma(double listaNumeros[]) {
+		double sumatorio = 0;
+		// Recorremos todos los numeros del array los vamos sumando
+		for (int i = 0; i < listaNumeros.length; i++) {
+			// Vamos usmando los numeros de la variable
+			sumatorio = sumatorio + listaNumeros[i];
+		}
+
+		return sumatorio;
+	}
+
+	/**
+	 * Recibe un array y devuelve la suma resolviendolo de forma recursiva
+	 * 
+	 * @param listaNumeros lista de numeros en double
+	 * @return
+	 */
+	public static double sumaRecursiva(double listaNumeros[]) {
+
+		// Si solo hay un numero lo devolvemos
+		if (listaNumeros.length == 1)
+			return listaNumeros[0];
+		else {
+			// Si hay mas de un numero devolvemos la suam del primer numero
+			// Mas la sumaRecursiva del array a partir de este numero
+			double primero = listaNumeros[0];
+			// Primero partimos el array
+			listaNumeros = Arrays.copyOfRange(listaNumeros, 1, listaNumeros.length);
+
+			// System.out.println("Array cortado " + Arrays.toString(listaNumeros));
+
+			return primero + sumaRecursiva(listaNumeros);
+		}
+
+	}
+
+	/**
+	 * El factorial de un numero consiste en multiplicar todos los numeros Entre 1 y
+	 * dicho numero. Por ejemplo el factorial de 5 seria: 5!=1*2*3*4*5
+	 * 
+	 * @param num
+	 * @return el factorial
+	 */
+	public static double factorial(int num) {
+		double factorial = 1;
+
+		for (int i = 1; i <= num; i++) {
+			factorial = factorial * i;
+		}
+
+		return factorial;
+	}
+
+	/**
+	 * El factorial de un numero consiste en multiplicar todos los numeros Entre 1 y
+	 * dicho numero. Por ejemplo el factorial de 5 seria: 5!=1*2*3*4*5
+	 * 
+	 * Para resolver el factorial de los 5 primeros numeros se podira poner asi
+	 * 5!=4!*5 4!=3!*4 3!=2!*3 2!=1!*2 1!=1 este ultimo ya no requiere utilizar una
+	 * version reducida del problema Es el caso base
+	 * 
+	 * 
+	 * @param num
+	 * @return el factorial
+	 */
+	public static double factorialRecursivo(int num) {
+		// Caso base
+		if (num == 1)
+			return 1;
+		else
+			// Si no es caso base se llama a la funcion con un caso mas pequeño
+			return num * factorialRecursivo(num - 1);
+
 	}
 
 	/**
