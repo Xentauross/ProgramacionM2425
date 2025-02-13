@@ -30,6 +30,9 @@ public class Personaje {
 	private int puntosVida;
 	private int puntosPoder;
 
+	private int posX;
+	private int posY;
+
 	// int listaNumeros[] = new int[10];
 
 	// Para definir un arraylist hay que decir el tipo de objeto que va a almacenar
@@ -164,6 +167,22 @@ public class Personaje {
 
 	public void setArmas(ArrayList<Arma> armas) {
 		this.armas = armas;
+	}
+
+	public int getPosX() {
+		return posX;
+	}
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public void setPosY(int posY) {
+		this.posY = posY;
 	}
 
 	/**
