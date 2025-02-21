@@ -1,43 +1,37 @@
 package unidad3;
 
+/**
+ * Esta clase es una clase hija de Empleado que hereda todas sus variables y
+ * funciones y además tiene sus atributos miembro:
+ * 
+ * gastoTarjeta consejo sede
+ * 
+ */
 public class Jefe extends Empleado {
 
-	/**************************
-	 * VARIABLES MIEMBRO
-	 ***************************/
 	private double gastoTarjeta;
 	private String consejo;
 	private String sede;
 
-	/**************************************************************
-	 * CONSTRUCTORES
-	 *************************************************************/
-	// Constructor vacio
-	public Jefe() {
-		super();
-		this.gastoTarjeta = Math.random() * 1000;
-		this.consejo = "";
-		this.sede = "";
-	}
-
-	/**
-	 * Constructor con parametros
-	 * 
-	 * @param gastoTarjeta
-	 * @param consejo
-	 * @param sede
-	 */
-	public Jefe(double gastoTarjeta, String consejo, String sede) {
-		// Llamamos al constructor
+	public Jefe(int id, String nombre, int edad, double ingresos, int puesto, double gastoTarjeta, String consejo,
+			String sede) {
+		// llamamos al constructor de la clase padre que recibe todos las variables
+		// miembro
 		super(id, nombre, edad, ingresos, puesto);
+
 		this.gastoTarjeta = gastoTarjeta;
 		this.consejo = consejo;
 		this.sede = sede;
 	}
 
-	/**************************************************************
-	 * GETTERS Y SETTERS DE LA CLASE
-	 *************************************************************/
+	public Jefe() {
+		super();
+
+		this.gastoTarjeta = 0;
+		this.consejo = "";
+		this.sede = "";
+		// TODO Auto-generated constructor stub
+	}
 
 	public double getGastoTarjeta() {
 		return gastoTarjeta;
@@ -63,14 +57,10 @@ public class Jefe extends Empleado {
 		this.sede = sede;
 	}
 
-	/**************************************************************
-	 * TO STRING
-	 *************************************************************/
 	@Override
 	public String toString() {
-		return "Jefe: " + "\n**************************" + "\nGasto Tarjeta: " + "<" + gastoTarjeta + ">"
-				+ "\nConsejo: " + "<" + consejo + ">" + "\nSede: " + "<" + sede + ">"
-				+ "\n****************************";
+		return "Jefe\n ******************************************************\n gastoTarjeta=" + gastoTarjeta
+				+ ", consejo=" + consejo + ", sede=" + sede + "]";
 	}
 
 }
